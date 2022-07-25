@@ -1,0 +1,1532 @@
+{
+	"info": {
+		"_postman_id": "6852d77a-5484-4559-a5f9-a138de2db9c3",
+		"name": "Settings Service API test_api_fork",
+		"description": "Settings Service OpenAPI documentation.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "dictionary",
+							"item": [
+								{
+									"name": "Get dictionaries",
+									"id": "594de669-2e2e-4746-87e6-2e4a3d7e79fe",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Translation language. Default is en",
+												"key": "accept-language",
+												"value": "<string>"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/dictionary",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"dictionary"
+											]
+										},
+										"description": "Get dictionaries"
+									},
+									"response": [
+										{
+											"id": "5251ab4a-a960-450f-bd07-48a826c3834a",
+											"name": "Dictionary list",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/dictionary",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"dictionary"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"enabled": true
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"deprecated\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"deprecated\": \"<boolean>\"\n    }\n  ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Get dictionary values",
+									"id": "19144d66-8be3-4fc5-ba70-54315cff48c4",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Translation language. Default is en",
+												"key": "accept-language",
+												"value": "<string>"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/dictionary/:dictionaryId?include=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"dictionary",
+												":dictionaryId"
+											],
+											"query": [
+												{
+													"description": "Specify what to include (only \"columns\" is supported)",
+													"key": "include",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"id": "11be152c-80be-4e58-90f4-f0c9e6ec1e99",
+													"key": "dictionaryId",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Get dictionary values"
+									},
+									"response": [
+										{
+											"id": "db4c30d3-4177-4d31-8032-82a76cf99c6d",
+											"name": "Object where keys - dictionary keys and values - dictionary values",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/dictionary/:dictionaryId?include=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"dictionary",
+														":dictionaryId"
+													],
+													"query": [
+														{
+															"key": "include",
+															"value": "<string>"
+														}
+													],
+													"variable": [
+														{
+															"key": "dictionaryId",
+															"value": "<uuid>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"enabled": true
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": {\n    \"values\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\",\n        \"columns\": [\n          {\n            \"veniam_9\": \"<string>\",\n            \"quiscf\": \"<string>\",\n            \"cupidatat_d74\": \"<string>\"\n          },\n          {\n            \"quis79\": \"<string>\",\n            \"ipsum_9\": \"<string>\",\n            \"Lorem___\": \"<string>\",\n            \"animd\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\",\n        \"columns\": [\n          {\n            \"tempor_28\": \"<string>\"\n          },\n          {\n            \"laborisac\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"columns\": [\n      {\n        \"eta\": \"<string>\",\n        \"tempora\": \"<string>\",\n        \"consequat_ce\": \"<string>\"\n      },\n      {\n        \"in_5c\": \"<string>\"\n      }\n    ]\n  }\n}"
+										},
+										{
+											"id": "116e95ee-111b-457a-bf51-f9baa9892be1",
+											"name": "Dictionary is not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/dictionary/:dictionaryId?include=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"dictionary",
+														":dictionaryId"
+													],
+													"query": [
+														{
+															"key": "include",
+															"value": "<string>"
+														}
+													],
+													"variable": [
+														{
+															"key": "dictionaryId",
+															"value": "<uuid>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain",
+													"enabled": true
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "b8940e51-b64e-4c32-bd21-ff9b346a8b87"
+						},
+						{
+							"name": "node",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "Get node by id",
+											"id": "be5b97a0-5525-4ab5-a4e9-08dc09bd2a44",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "<string>"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/node/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"node",
+														":id"
+													],
+													"variable": [
+														{
+															"id": "b9f2f8ea-780b-4502-b44f-dfdfadf28ef1",
+															"key": "id",
+															"value": "<uuid>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Get node by id"
+											},
+											"response": [
+												{
+													"id": "5d078218-1f2b-42c2-bf4b-e79263b931bb",
+													"name": "Node",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Translation language. Default is en",
+																"key": "accept-language",
+																"value": "<string>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/node/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"node",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "<uuid>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json",
+															"enabled": true
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"nodeTypeId\": \"<integer>\",\n    \"parentId\": \"<string>\",\n    \"childNodes\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/NodeResponse detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/NodeResponse detected>\"\n      }\n    ]\n  }\n}"
+												},
+												{
+													"id": "c0835e03-806d-4d42-b462-3dd6a11a5be4",
+													"name": "Node is not found",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Translation language. Default is en",
+																"key": "accept-language",
+																"value": "<string>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/node/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"node",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "<uuid>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain",
+															"enabled": true
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Update node",
+											"id": "8cfb3e1e-1cf3-4f49-b82a-9d8380f846e0",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/node/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"node",
+														":id"
+													],
+													"variable": [
+														{
+															"id": "7b25ea57-35b8-405a-9f54-061b71e5474f",
+															"key": "id",
+															"value": "<uuid>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Update node"
+											},
+											"response": [
+												{
+													"id": "924618b4-ce9b-4446-8982-3e7de84e037e",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"description": "Translation language. Default is en",
+																"key": "accept-language",
+																"value": "<string>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/node/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"node",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "<uuid>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain",
+															"enabled": true
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "f6257373-0eec-47ba-98c1-8a275b5a3b2d",
+													"name": "Node is not found",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"description": "Translation language. Default is en",
+																"key": "accept-language",
+																"value": "<string>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/node/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"node",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "<uuid>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain",
+															"enabled": true
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Delete node",
+											"id": "12645d2b-a645-4ea1-9652-2fa3e0fbd52d",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/node/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"node",
+														":id"
+													],
+													"variable": [
+														{
+															"id": "51a5242e-a008-46a3-8366-d1f9f6f1f52d",
+															"key": "id",
+															"value": "<uuid>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Delete node"
+											},
+											"response": [
+												{
+													"id": "896e2ec9-0ffa-4921-b654-a81aee42d25a",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Translation language. Default is en",
+																"key": "accept-language",
+																"value": "<string>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/node/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"node",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "<uuid>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain",
+															"enabled": true
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "e1e77626-7ed4-4908-b614-b3e190151e09",
+													"name": "Node is not found",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Translation language. Default is en",
+																"key": "accept-language",
+																"value": "<string>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/node/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"node",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "<uuid>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain",
+															"enabled": true
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "4b5b8e94-0512-44ac-accf-7f14e78785b0"
+								},
+								{
+									"name": "Get node tree",
+									"id": "4f81494d-c724-4599-b422-b231ae074a6e",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Translation language. Default is en",
+												"key": "accept-language",
+												"value": "<string>"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/node?rootNode=<uuid>&structure=<string>&nodeTypeId=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"node"
+											],
+											"query": [
+												{
+													"description": "Tree root node",
+													"key": "rootNode",
+													"value": "<uuid>"
+												},
+												{
+													"description": "Structure format",
+													"key": "structure",
+													"value": "<string>"
+												},
+												{
+													"description": "Filter by node type",
+													"key": "nodeTypeId",
+													"value": "<integer>"
+												}
+											]
+										},
+										"description": "Get node tree"
+									},
+									"response": [
+										{
+											"id": "e4f4fc9c-867e-4862-ae9c-a4d12637adf8",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/node?rootNode=<uuid>&structure=<string>&nodeTypeId=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"node"
+													],
+													"query": [
+														{
+															"key": "rootNode",
+															"value": "<uuid>"
+														},
+														{
+															"key": "structure",
+															"value": "<string>"
+														},
+														{
+															"key": "nodeTypeId",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"enabled": true
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"nodeTypeId\": \"<integer>\",\n      \"parentId\": \"<string>\",\n      \"childNodes\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/NodeResponse detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/NodeResponse detected>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"nodeTypeId\": \"<integer>\",\n      \"parentId\": \"<string>\",\n      \"childNodes\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/NodeResponse detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/NodeResponse detected>\"\n        }\n      ]\n    }\n  ]\n}"
+										},
+										{
+											"id": "4ae1fde8-87c5-495a-a8bb-1a23f696229d",
+											"name": "Node is not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/node?rootNode=<uuid>&structure=<string>&nodeTypeId=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"node"
+													],
+													"query": [
+														{
+															"key": "rootNode",
+															"value": "<uuid>"
+														},
+														{
+															"key": "structure",
+															"value": "<string>"
+														},
+														{
+															"key": "nodeTypeId",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain",
+													"enabled": true
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Create new node",
+									"id": "0e8c7899-a917-4ddc-b78b-a4b57d9da396",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Translation language. Default is en",
+												"key": "accept-language",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"parentId\": \"<uuid>\",\n  \"nodeTypeId\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/node",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"node"
+											]
+										},
+										"description": "Create new node"
+									},
+									"response": [
+										{
+											"id": "f681e52c-6e22-488b-8149-0524c4c16a76",
+											"name": "Created id",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "<string>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"<string>\",\n  \"parentId\": \"<uuid>\",\n  \"nodeTypeId\": \"<integer>\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/node",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"node"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"enabled": true
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": {\n    \"id\": \"<string>\"\n  }\n}"
+										},
+										{
+											"id": "3b30cd12-42b0-41f2-a0f2-1e9de7196997",
+											"name": "Node is not found",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "<string>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"<string>\",\n  \"parentId\": \"<uuid>\",\n  \"nodeTypeId\": \"<integer>\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/node",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"node"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain",
+													"enabled": true
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "c8956c76-0d41-466b-98cb-04ab011f8af5"
+						},
+						{
+							"name": "settings",
+							"item": [
+								{
+									"name": "Get settings",
+									"id": "3c52bb7f-b2d5-4d72-9046-c28ef476c6cc",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Translation language. Default is en",
+												"key": "accept-language",
+												"value": "<string>"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/settings",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"settings"
+											]
+										},
+										"description": "Get settings"
+									},
+									"response": [
+										{
+											"id": "89a9018f-f4ea-425f-87d6-7c56a403dcd3",
+											"name": "Settings list",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/settings",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"settings"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"enabled": true
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"valueType\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"valueType\": \"<string>\"\n    }\n  ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Get settings values",
+									"id": "6955ee7f-13ca-4b3e-881b-a2faa041cb93",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) Node ID",
+												"key": "Platform-NodeId",
+												"value": "<uuid>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/settings",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"settings"
+											]
+										},
+										"description": "Get settings values"
+									},
+									"response": [
+										{
+											"id": "502e545d-877a-4af8-a5ac-1cb0caa45c28",
+											"name": "Settings values",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": "(Required) Node ID",
+														"key": "Platform-NodeId",
+														"value": "<uuid>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/settings",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"settings"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"enabled": true
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": {\n    \"dod_0\": \"<string>\",\n    \"in8b\": \"<string>\"\n  }\n}"
+										}
+									]
+								},
+								{
+									"name": "Get setting value",
+									"id": "9d8de387-79aa-4ace-99b4-198ae203f811",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Node ID",
+												"key": "Platform-NodeId",
+												"value": "<uuid>"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/settings/:settingId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"settings",
+												":settingId"
+											],
+											"variable": [
+												{
+													"id": "2ef825c7-a582-4af3-9b67-0887b0e4ef13",
+													"key": "settingId",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Get setting value"
+									},
+									"response": [
+										{
+											"id": "9d6d7088-4ab2-4a37-9669-d5772c650417",
+											"name": "Setting's value",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "(Required) Node ID",
+														"key": "Platform-NodeId",
+														"value": "<uuid>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/settings/:settingId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"settings",
+														":settingId"
+													],
+													"variable": [
+														{
+															"key": "settingId",
+															"value": "<uuid>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"enabled": true
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+										},
+										{
+											"id": "1b8158a8-fbb2-4b64-8dd9-d160163d9207",
+											"name": "Setting is not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "(Required) Node ID",
+														"key": "Platform-NodeId",
+														"value": "<uuid>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/settings/:settingId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"settings",
+														":settingId"
+													],
+													"variable": [
+														{
+															"key": "settingId",
+															"value": "<uuid>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain",
+													"enabled": true
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "d91c3662-2724-4d79-990a-0ab54f606cbf"
+						},
+						{
+							"name": "Get node types",
+							"id": "af6a7dfc-a108-44ff-bd80-49cc324a64aa",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Translation language. Default is en",
+										"key": "accept-language",
+										"value": "<string>"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/node-type",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"node-type"
+									]
+								},
+								"description": "Get node types"
+							},
+							"response": [
+								{
+									"id": "9d16185c-8e62-449a-aa68-501cb4cdceff",
+									"name": "Node types",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Translation language. Default is en",
+												"key": "accept-language",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/node-type",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"node-type"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"enabled": true
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					],
+					"id": "b5e2322e-d3c0-4ccb-9b78-66183bef06ba"
+				},
+				{
+					"name": "b5d0b17998ca5ad45a25d0d3deb0971c",
+					"id": "e0a073ac-e73a-4ab4-8414-61c5b07632ab",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/doc.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"doc.json"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "122f5d8b-3042-42dc-bce8-f8bdefce9077",
+							"name": "response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/doc.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"doc.json"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain",
+									"enabled": true
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": ""
+						}
+					]
+				}
+			],
+			"id": "bd20e231-5211-4b2a-b866-a6a2f60266e0"
+		},
+		{
+			"name": "Get dictionaries",
+			"id": "b0e1a8ff-d9c6-4f4a-96bf-b74c1f5ffa3f",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Translation language. Default is en",
+						"key": "accept-language",
+						"value": "do nulla"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/dictionary",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"dictionary"
+					]
+				},
+				"description": "Get dictionaries"
+			},
+			"response": [
+				{
+					"id": "1fc581e4-09e6-445c-a8c2-1d2a3cff21fe",
+					"name": "Dictionary list",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Translation language. Default is en",
+								"key": "accept-language",
+								"value": "non commodo deserunt"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/dictionary",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dictionary"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"data\": [\n    {\n      \"id\": \"Duis mollit exercitation do sit\",\n      \"name\": \"aliqua ut aute\",\n      \"deprecated\": true\n    },\n    {\n      \"id\": \"id tempor veniam sed\",\n      \"name\": \"enim ut\",\n      \"deprecated\": true\n    }\n  ]\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a57fa39e-f97f-42d8-bd4a-ec228c8f45f2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "309d5130-19cc-466b-994f-d9b92220e077",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "f3ea5eb3-2360-47e7-8812-38ee634bf8f5",
+			"key": "baseUrl",
+			"value": "/_settings"
+		}
+	]
+}

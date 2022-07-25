@@ -1,0 +1,1423 @@
+{
+	"info": {
+		"_postman_id": "58f7b879-541d-42b9-b4ad-8a86668fd439",
+		"name": "Test suite 2.0.0 25.07.22",
+		"description": "Settings Service OpenAPI documentation.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "dictionary",
+							"item": [
+								{
+									"name": "Get dictionaries",
+									"id": "a82d19ad-2a46-427c-9dec-b258687ee65d",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Translation language. Default is en",
+												"key": "accept-language",
+												"value": "sit cillu"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/dictionary",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"dictionary"
+											]
+										},
+										"description": "Get dictionaries"
+									},
+									"response": [
+										{
+											"id": "a1ef2b30-1de8-459e-a52f-b6e216f55c5a",
+											"name": "Dictionary list",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "sit cillu"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/dictionary",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"dictionary"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": [\n    {\n      \"id\": \"aliqua eiusmod\",\n      \"name\": \"enim reprehenderit\",\n      \"deprecated\": true\n    },\n    {\n      \"id\": \"velit enim\",\n      \"name\": \"sint id cupidatat est\",\n      \"deprecated\": true\n    }\n  ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Get dictionary values",
+									"id": "a4a1b4c2-0161-4af4-a758-71cffcbd15f6",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Translation language. Default is en",
+												"key": "accept-language",
+												"value": "sit cillu"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/dictionary/:dictionaryId?include=columns",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"dictionary",
+												":dictionaryId"
+											],
+											"query": [
+												{
+													"key": "include",
+													"value": "columns",
+													"description": "Specify what to include (only \"columns\" is supported)"
+												}
+											],
+											"variable": [
+												{
+													"id": "9a3ade6c-2f3c-4238-a04a-24f517d91cdb",
+													"key": "dictionaryId",
+													"value": "94",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Get dictionary values"
+									},
+									"response": [
+										{
+											"id": "e591b0e8-634d-44df-b4d3-f0ce4033dbbe",
+											"name": "Object where keys - dictionary keys and values - dictionary values",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "sit cillu"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/dictionary/:dictionaryId?include=columns",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"dictionary",
+														":dictionaryId"
+													],
+													"query": [
+														{
+															"key": "include",
+															"value": "columns"
+														}
+													],
+													"variable": [
+														{
+															"key": "dictionaryId",
+															"value": "94",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": {\n    \"values\": [\n      {\n        \"name\": \"nostrud laboris\",\n        \"value\": \"eu pariatur deserunt ea aliqua\",\n        \"columns\": [\n          {\n            \"irure_e5f\": \"in laboris Ut minim\",\n            \"nisi_67\": \"quis\",\n            \"sint_ae7\": \"in in\",\n            \"Duis6a5\": \"voluptate consequat nulla irure\"\n          },\n          {\n            \"irure9\": \"ut nulla qui irure\"\n          }\n        ]\n      },\n      {\n        \"name\": \"ut tempor\",\n        \"value\": \"n\",\n        \"columns\": [\n          {\n            \"nulla3c\": \"ut labore elit\",\n            \"nostrud__3\": \"proident culpa dolor esse\",\n            \"est_e\": \"ea veniam ut et\"\n          },\n          {\n            \"laboris_3\": \"nostrud proide\",\n            \"id_65f\": \"Ut Lorem mollit ipsum\"\n          }\n        ]\n      }\n    ],\n    \"columns\": [\n      {\n        \"laborum60\": \"tempor adipisicing ad officia\",\n        \"fugiat_3b\": \"non occaecat\",\n        \"do_f\": \"Lorem velit deserunt in sint\"\n      },\n      {\n        \"idca6\": \"amet deserunt enim culpa occaecat\",\n        \"minim_4\": \"in velit volupt\",\n        \"exercitation_4\": \"proident ut\",\n        \"tempora\": \"voluptate id ullamco\",\n        \"cillum_bb9\": \"mollit sed\"\n      }\n    ]\n  }\n}"
+										},
+										{
+											"id": "6e12ee27-8aaf-4e17-9166-0225eaa003ec",
+											"name": "Dictionary is not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "sit cillu"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/dictionary/:dictionaryId?include=columns",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"dictionary",
+														":dictionaryId"
+													],
+													"query": [
+														{
+															"key": "include",
+															"value": "columns"
+														}
+													],
+													"variable": [
+														{
+															"key": "dictionaryId",
+															"value": "94",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "25aa3baa-6095-4c88-880e-696d5c1d9116"
+						},
+						{
+							"name": "node",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "Get node by id",
+											"id": "ecead05b-a5d9-45f8-a809-c1d93f4a31c0",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "sit cillu"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/node/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"node",
+														":id"
+													],
+													"variable": [
+														{
+															"id": "ab18fc05-9a73-40ea-ad4c-4c8b99a9e742",
+															"key": "id",
+															"value": "94",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Get node by id"
+											},
+											"response": [
+												{
+													"id": "6f365360-8646-41ea-b814-01200c23a2ac",
+													"name": "Node",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Translation language. Default is en",
+																"key": "accept-language",
+																"value": "sit cillu"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/node/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"node",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "94",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": {\n    \"id\": \"dolore aute nulla\",\n    \"name\": \"labore sint reprehenderit ullamco\",\n    \"nodeTypeId\": -14976406,\n    \"parentId\": \"est culpa voluptate occaecat deserunt\",\n    \"childNodes\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/NodeResponse detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/NodeResponse detected>\"\n      }\n    ]\n  }\n}"
+												},
+												{
+													"id": "8531b091-fcc3-469e-9253-a6568e61dc4f",
+													"name": "Node is not found",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Translation language. Default is en",
+																"key": "accept-language",
+																"value": "sit cillu"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/node/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"node",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "94",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Update node",
+											"id": "2bfa5d17-1c14-48ba-a63f-ec80db3aa062",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "sit cillu"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"in dese\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/node/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"node",
+														":id"
+													],
+													"variable": [
+														{
+															"id": "358055b0-86f4-49ff-944c-e22a1c680c9f",
+															"key": "id",
+															"value": "94",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Update node"
+											},
+											"response": [
+												{
+													"id": "93bea4f7-74d8-45e9-b405-7d0517a354b8",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"description": "Translation language. Default is en",
+																"key": "accept-language",
+																"value": "sit cillu"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"in dese\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/node/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"node",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "94",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "af9b0e9f-a9f8-4344-a0ee-03afc0ecb11f",
+													"name": "Node is not found",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"description": "Translation language. Default is en",
+																"key": "accept-language",
+																"value": "sit cillu"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"in dese\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/node/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"node",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "94",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Delete node",
+											"id": "ea5acad8-dfd3-42d1-936e-b47c9f984803",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "sit cillu"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/node/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"node",
+														":id"
+													],
+													"variable": [
+														{
+															"id": "e801da54-3dc5-44e6-a196-8b51eb2a4128",
+															"key": "id",
+															"value": "94",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Delete node"
+											},
+											"response": [
+												{
+													"id": "e5753a64-4a6e-4f4e-bb7e-5b399e49f4f9",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Translation language. Default is en",
+																"key": "accept-language",
+																"value": "sit cillu"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/node/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"node",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "94",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "23e6b7dd-8d2a-4c99-bbf0-2d09596925c8",
+													"name": "Node is not found",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Translation language. Default is en",
+																"key": "accept-language",
+																"value": "sit cillu"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/node/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"node",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "94",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "274f9b83-3b0d-4977-9dfc-478be8fa67fb"
+								},
+								{
+									"name": "Get node tree",
+									"id": "4a8c5848-d187-44cd-a1c3-b4e972caeeba",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Translation language. Default is en",
+												"key": "accept-language",
+												"value": "sit cillu"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/node?rootNode=urn:uuid:4b23ceee-ef94-d276-de99-03ea2fa098e7&structure=flat&nodeTypeId=4",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"node"
+											],
+											"query": [
+												{
+													"key": "rootNode",
+													"value": "urn:uuid:4b23ceee-ef94-d276-de99-03ea2fa098e7",
+													"description": "Tree root node"
+												},
+												{
+													"key": "structure",
+													"value": "flat",
+													"description": "Structure format"
+												},
+												{
+													"key": "nodeTypeId",
+													"value": "4",
+													"description": "Filter by node type"
+												}
+											]
+										},
+										"description": "Get node tree"
+									},
+									"response": [
+										{
+											"id": "bb11bb81-00ab-4af8-b239-0e16e13e1494",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "sit cillu"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/node?rootNode=urn:uuid:4b23ceee-ef94-d276-de99-03ea2fa098e7&structure=flat&nodeTypeId=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"node"
+													],
+													"query": [
+														{
+															"key": "rootNode",
+															"value": "urn:uuid:4b23ceee-ef94-d276-de99-03ea2fa098e7"
+														},
+														{
+															"key": "structure",
+															"value": "flat"
+														},
+														{
+															"key": "nodeTypeId",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": [\n    {\n      \"id\": \"laboris voluptate\",\n      \"name\": \"veniam deserunt consequat pariatur\",\n      \"nodeTypeId\": -75644267,\n      \"parentId\": \"laborum Duis\",\n      \"childNodes\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/NodeResponse detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/NodeResponse detected>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"ea esse magna\",\n      \"name\": \"ut cillum\",\n      \"nodeTypeId\": -94375095,\n      \"parentId\": \"quis mollit\",\n      \"childNodes\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/NodeResponse detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/NodeResponse detected>\"\n        }\n      ]\n    }\n  ]\n}"
+										},
+										{
+											"id": "721b55ee-3686-4010-b3a5-cbd5df5ff134",
+											"name": "Node is not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "sit cillu"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/node?rootNode=urn:uuid:4b23ceee-ef94-d276-de99-03ea2fa098e7&structure=flat&nodeTypeId=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"node"
+													],
+													"query": [
+														{
+															"key": "rootNode",
+															"value": "urn:uuid:4b23ceee-ef94-d276-de99-03ea2fa098e7"
+														},
+														{
+															"key": "structure",
+															"value": "flat"
+														},
+														{
+															"key": "nodeTypeId",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Create new node",
+									"id": "c07f3c40-95a8-4d55-bd4c-eed670eae1cd",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Translation language. Default is en",
+												"key": "accept-language",
+												"value": "sit cillu"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"aute\",\n  \"parentId\": \"84c67c82-7e43-b71b-c71d-9a06f6d6b0d9\",\n  \"nodeTypeId\": 78788248\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/node",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"node"
+											]
+										},
+										"description": "Create new node"
+									},
+									"response": [
+										{
+											"id": "08fb4ff2-05a4-416d-9f64-2dd885479963",
+											"name": "Created id",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "sit cillu"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"aute\",\n  \"parentId\": \"84c67c82-7e43-b71b-c71d-9a06f6d6b0d9\",\n  \"nodeTypeId\": 78788248\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/node",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"node"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": {\n    \"id\": \"id sit\"\n  }\n}"
+										},
+										{
+											"id": "74300aa9-bf91-4623-8d60-70f5a3696254",
+											"name": "Node is not found",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "sit cillu"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"aute\",\n  \"parentId\": \"84c67c82-7e43-b71b-c71d-9a06f6d6b0d9\",\n  \"nodeTypeId\": 78788248\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/node",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"node"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "5a42bfba-ccd2-40fa-92e4-0c48707869a6"
+						},
+						{
+							"name": "settings",
+							"item": [
+								{
+									"name": "Get settings",
+									"id": "7952d66b-e938-4376-8060-26f120d0e124",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Translation language. Default is en",
+												"key": "accept-language",
+												"value": "sit cillu"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/settings",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"settings"
+											]
+										},
+										"description": "Get settings"
+									},
+									"response": [
+										{
+											"id": "7923fd8c-744a-4828-936b-3b14d644eb64",
+											"name": "Settings list",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Translation language. Default is en",
+														"key": "accept-language",
+														"value": "sit cillu"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/settings",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"settings"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": [\n    {\n      \"id\": \"anim\",\n      \"alias\": \"id laborum pariatur nostru\",\n      \"valueType\": \"enim commodo ut\"\n    },\n    {\n      \"id\": \"dolor eiusmod exercitation aute\",\n      \"alias\": \"ea mollit Ut\",\n      \"valueType\": \"ut officia dolore\"\n    }\n  ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Get settings values",
+									"id": "ac6d13ad-71fc-44a8-a66e-fbc9ed3c003d",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) Node ID",
+												"key": "Platform-NodeId",
+												"value": "urn:uuid:4b23ceee-ef94-d276-de99-03ea2fa098e7"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"ids\": [\n    \"66d076f3-3189-d243-cf69-ed9eab6425e3\",\n    \"urn:uuid:682da3dc-b51b-c86a-fc4a-d94aba8c0b4f\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/settings",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"settings"
+											]
+										},
+										"description": "Get settings values"
+									},
+									"response": [
+										{
+											"id": "72d51283-1a81-4e34-817b-7679130e9249",
+											"name": "Settings values",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": "(Required) Node ID",
+														"key": "Platform-NodeId",
+														"value": "urn:uuid:4b23ceee-ef94-d276-de99-03ea2fa098e7"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"ids\": [\n    \"urn:uuid:f95b732f-6fe5-2189-4011-9b9bf7e1be68\",\n    \"31cde416-2767-51c0-7a12-a1e75d6ed631\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/settings",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"settings"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": {\n    \"ullamco_f5d\": \"ut pariatur\",\n    \"reprehenderit_7\": \"mollit cillum\"\n  }\n}"
+										}
+									]
+								},
+								{
+									"name": "Get setting value",
+									"id": "0bf61287-1f5e-4deb-8bb2-fb32a13b3359",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Node ID",
+												"key": "Platform-NodeId",
+												"value": "urn:uuid:4b23ceee-ef94-d276-de99-03ea2fa098e7"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/settings/:settingId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"settings",
+												":settingId"
+											],
+											"variable": [
+												{
+													"id": "21856869-9b6f-4859-a0d8-08da1b55353b",
+													"key": "settingId",
+													"value": "urn:uuid:4b23ceee-ef94-d276-de99-03ea2fa098e7",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Get setting value"
+									},
+									"response": [
+										{
+											"id": "77d9ea52-0eb9-438b-a7ec-cfe4f1f04a3e",
+											"name": "Setting's value",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "(Required) Node ID",
+														"key": "Platform-NodeId",
+														"value": "urn:uuid:4b23ceee-ef94-d276-de99-03ea2fa098e7"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/settings/:settingId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"settings",
+														":settingId"
+													],
+													"variable": [
+														{
+															"key": "settingId",
+															"value": "urn:uuid:4b23ceee-ef94-d276-de99-03ea2fa098e7",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": [\n    \"velit deserunt sit sunt\",\n    \"eiusmod tempor dolore Excepteur Lorem\"\n  ]\n}"
+										},
+										{
+											"id": "031a8b40-c35e-4b97-ba49-59dbdc5575fb",
+											"name": "Setting is not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "(Required) Node ID",
+														"key": "Platform-NodeId",
+														"value": "urn:uuid:4b23ceee-ef94-d276-de99-03ea2fa098e7"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/settings/:settingId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"settings",
+														":settingId"
+													],
+													"variable": [
+														{
+															"key": "settingId",
+															"value": "urn:uuid:4b23ceee-ef94-d276-de99-03ea2fa098e7",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "41c3607f-7771-42bc-b98b-cf1d9fcf4264"
+						},
+						{
+							"name": "Get node types",
+							"id": "bba512a6-e971-40b7-a08d-9ff9e0c64127",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Translation language. Default is en",
+										"key": "accept-language",
+										"value": "sit cillu"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/node-type",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"node-type"
+									]
+								},
+								"description": "Get node types"
+							},
+							"response": [
+								{
+									"id": "1c378b25-8ba2-40dd-80c7-79093cf7ca2c",
+									"name": "Node types",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Translation language. Default is en",
+												"key": "accept-language",
+												"value": "sit cillu"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/node-type",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"node-type"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"data\": [\n    {\n      \"id\": 84216565,\n      \"name\": \"dolor eu\"\n    },\n    {\n      \"id\": 85733798,\n      \"name\": \"ipsum aliquip Ut ut\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					],
+					"id": "b37a9c44-d04b-4967-b7f2-51d10b4f059a"
+				},
+				{
+					"name": "b5d0b17998ca5ad45a25d0d3deb0971c",
+					"id": "6d8c93a1-c67c-4f39-839f-18931682b0b4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/doc.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"doc.json"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "d8ad8801-d5c9-4445-90e1-3d1129c90a45",
+							"name": "response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/doc.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"doc.json"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": ""
+						}
+					]
+				}
+			],
+			"id": "2ec50301-ee44-4e65-b9d2-da6652af85ca"
+		}
+	],
+	"variable": [
+		{
+			"id": "c1018fa6-2585-4137-82ae-abe920577eb7",
+			"key": "baseUrl",
+			"value": "/_settings",
+			"type": "string"
+		}
+	]
+}

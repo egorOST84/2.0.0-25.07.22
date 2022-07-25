@@ -1,0 +1,855 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Settings Service API today",
+        "description": "Settings Service OpenAPI documentation.",
+        "version": "2.0.0"
+    },
+    "servers": [
+        {
+            "url": "\/_settings"
+        }
+    ],
+    "paths": {
+        "\/api\/v1\/dictionary\/{dictionaryId}": {
+            "get": {
+                "tags": [
+                    "Dictionary"
+                ],
+                "summary": "Get dictionary values",
+                "description": "Get dictionary values",
+                "operationId": "get_dictionary-by-id",
+                "parameters": [
+                    {
+                        "name": "dictionaryId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "pattern": "[a-z0-9\\-]+"
+                        }
+                    },
+                    {
+                        "name": "accept-language",
+                        "in": "header",
+                        "description": "Translation language. Default is en",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "include",
+                        "in": "query",
+                        "description": "Specify what to include (only \"columns\" is supported)",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "columns"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Object where keys - dictionary keys and values - dictionary values",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/EnumValuesResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Dictionary is not found"
+                    }
+                }
+            }
+        },
+        "\/api\/v1\/dictionary": {
+            "get": {
+                "tags": [
+                    "Dictionary"
+                ],
+                "summary": "Get dictionaries",
+                "description": "Get dictionaries",
+                "operationId": "get_dictionary-list",
+                "parameters": [
+                    {
+                        "name": "accept-language",
+                        "in": "header",
+                        "description": "Translation language. Default is en",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Dictionary list",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/DictionaryList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/api\/v1\/node": {
+            "get": {
+                "tags": [
+                    "Node"
+                ],
+                "summary": "Get node tree",
+                "description": "Get node tree",
+                "operationId": "get_get-node-tree",
+                "parameters": [
+                    {
+                        "name": "rootNode",
+                        "in": "query",
+                        "description": "Tree root node",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    },
+                    {
+                        "name": "structure",
+                        "in": "query",
+                        "description": "Structure format",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "flat",
+                                "tree"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "nodeTypeId",
+                        "in": "query",
+                        "description": "Filter by node type",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#\/components\/schemas\/NodeType"
+                        }
+                    },
+                    {
+                        "name": "accept-language",
+                        "in": "header",
+                        "description": "Translation language. Default is en",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/NodeTreeResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Node is not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Node"
+                ],
+                "summary": "Create new node",
+                "description": "Create new node",
+                "operationId": "post_create-node",
+                "parameters": [
+                    {
+                        "name": "accept-language",
+                        "in": "header",
+                        "description": "Translation language. Default is en",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Node properties",
+                    "required": true,
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/CreateNodeRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Created id",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/GetNodeIdResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Node is not found"
+                    }
+                }
+            }
+        },
+        "\/api\/v1\/node\/{id}": {
+            "get": {
+                "tags": [
+                    "Node"
+                ],
+                "summary": "Get node by id",
+                "description": "Get node by id",
+                "operationId": "get_node-by-id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "pattern": "[a-z0-9\\-]+"
+                        }
+                    },
+                    {
+                        "name": "accept-language",
+                        "in": "header",
+                        "description": "Translation language. Default is en",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Node",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/GetNodeResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Node is not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Node"
+                ],
+                "summary": "Update node",
+                "description": "Update node",
+                "operationId": "put_update-node",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "pattern": "[a-z0-9\\-]+"
+                        }
+                    },
+                    {
+                        "name": "accept-language",
+                        "in": "header",
+                        "description": "Translation language. Default is en",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Node properties",
+                    "required": true,
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "required": [
+                                    "name"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Node is not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Node"
+                ],
+                "summary": "Delete node",
+                "description": "Delete node",
+                "operationId": "delete_delete-node",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "pattern": "[a-z0-9\\-]+"
+                        }
+                    },
+                    {
+                        "name": "accept-language",
+                        "in": "header",
+                        "description": "Translation language. Default is en",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Node is not found"
+                    }
+                }
+            }
+        },
+        "\/api\/v1\/node-type": {
+            "get": {
+                "tags": [
+                    "NodeType"
+                ],
+                "summary": "Get node types",
+                "description": "Get node types",
+                "operationId": "get_app_node_type",
+                "parameters": [
+                    {
+                        "name": "accept-language",
+                        "in": "header",
+                        "description": "Translation language. Default is en",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Node types",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/GetNodeTypesResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/api\/v1\/settings\/{settingId}": {
+            "get": {
+                "tags": [
+                    "Settings"
+                ],
+                "summary": "Get setting value",
+                "description": "Get setting value",
+                "operationId": "get_settings",
+                "parameters": [
+                    {
+                        "name": "settingId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    },
+                    {
+                        "name": "Platform-NodeId",
+                        "in": "header",
+                        "description": "Node ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Setting's value",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/SettingData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Setting is not found"
+                    }
+                }
+            }
+        },
+        "\/api\/v1\/settings": {
+            "get": {
+                "tags": [
+                    "Settings"
+                ],
+                "summary": "Get settings",
+                "description": "Get settings",
+                "operationId": "get_settings-list",
+                "parameters": [
+                    {
+                        "name": "accept-language",
+                        "in": "header",
+                        "description": "Translation language. Default is en",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Settings list",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/SettingsList"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Settings"
+                ],
+                "summary": "Get settings values",
+                "description": "Get settings values",
+                "operationId": "post_settings-values-list",
+                "parameters": [
+                    {
+                        "name": "Platform-NodeId",
+                        "in": "header",
+                        "description": "Node ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Setting IDs",
+                    "required": true,
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "properties": {
+                                    "ids": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "format": "uuid"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Settings values",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/SettingsData"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/api\/doc.json": {
+            "get": {
+                "operationId": "b5d0b17998ca5ad45a25d0d3deb0971c",
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "NodeType": {
+                "title": "Allowed node type",
+                "description": "Allowed node type",
+                "type": "integer",
+                "enum": [
+                    1,
+                    3,
+                    4,
+                    5
+                ]
+            },
+            "EnumValuesResponse": {
+                "title": "Enum values",
+                "description": "Enum values",
+                "required": [
+                    "data"
+                ],
+                "properties": {
+                    "data": {
+                        "$ref": "#\/components\/schemas\/EnumValues"
+                    }
+                },
+                "type": "object"
+            },
+            "DictionaryList": {
+                "required": [
+                    "data"
+                ],
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/DictionaryListElement"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "NodeTreeResponse": {
+                "required": [
+                    "data"
+                ],
+                "properties": {
+                    "data": {
+                        "type": "object",
+                        "oneOf": [
+                            {
+                                "description": "Flat tree",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#\/components\/schemas\/NodeResponse"
+                                }
+                            },
+                            {
+                                "$ref": "#\/components\/schemas\/NodeResponse"
+                            }
+                        ]
+                    }
+                },
+                "type": "object"
+            },
+            "CreateNodeRequest": {
+                "required": [
+                    "name",
+                    "parentId",
+                    "nodeTypeId"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "maxLength": 255,
+                        "minLength": 1
+                    },
+                    "parentId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "nodeTypeId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "GetNodeIdResponse": {
+                "required": [
+                    "data"
+                ],
+                "properties": {
+                    "data": {
+                        "$ref": "#\/components\/schemas\/NodeIdResponse"
+                    }
+                },
+                "type": "object"
+            },
+            "GetNodeResponse": {
+                "required": [
+                    "data"
+                ],
+                "properties": {
+                    "data": {
+                        "$ref": "#\/components\/schemas\/NodeResponse"
+                    }
+                },
+                "type": "object"
+            },
+            "GetNodeTypesResponse": {
+                "required": [
+                    "data"
+                ],
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/NodeTypeResponse"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "SettingData": {
+                "required": [
+                    "data"
+                ],
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "SettingsList": {
+                "required": [
+                    "data"
+                ],
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/SettingsListElement"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "SettingsData": {
+                "required": [
+                    "data"
+                ],
+                "properties": {
+                    "data": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "EnumValues": {
+                "title": "Enum values",
+                "description": "Enum values",
+                "required": [
+                    "values"
+                ],
+                "properties": {
+                    "values": {
+                        "type": "array",
+                        "items": {
+                            "required": [
+                                "name",
+                                "value"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "value": {
+                                    "type": "string"
+                                },
+                                "columns": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "additionalProperties": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "columns": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "DictionaryListElement": {
+                "required": [
+                    "id",
+                    "name",
+                    "deprecated"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "deprecated": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "NodeResponse": {
+                "required": [
+                    "id",
+                    "name",
+                    "nodeTypeId"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "nodeTypeId": {
+                        "type": "integer"
+                    },
+                    "parentId": {
+                        "type": "string"
+                    },
+                    "childNodes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/NodeResponse"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "NodeIdResponse": {
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "NodeTypeResponse": {
+                "required": [
+                    "id",
+                    "name"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "SettingsListElement": {
+                "required": [
+                    "id",
+                    "alias",
+                    "valueType"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "alias": {
+                        "type": "string"
+                    },
+                    "valueType": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
